@@ -1,0 +1,13 @@
+Q1] Which field of the Customers table is the primary key? 
+ANS -> There is no primary key but, Cnum can assigned as primary key in customer table.
+
+Q2] What is the 4th column of the Customers table? 
+ANS -> 'Rating' is the 4th column of Customers table.
+
+Q3] What is another word for row?  For column? 
+ANS -> For row ---> tuples, records
+       For column ---> attributes
+
+Q4] Why isn’t it possible to see the first five rows of a table? 
+ANS -> It is possible to see first 5 rows of a column by using LIMIT keyword in SELECT statement. Statement "SELECT * FROM table LIMIT 5;"
+will help to see first 5 rows of a table.
