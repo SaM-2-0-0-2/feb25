@@ -1,0 +1,21 @@
+
+mysql> SELECT `Onum`,`Amt`,`Odate` FROM `Orders`;
+
+-------------------------------------------------
+
+mysql> SELECT * FROM `CUSTOMERS` WHERE Snum=1001;
+
+-------------------------------------------------
+
+mysql> SELECT `City`, `Sname`,`Snum`,`Comm` FROM `SALESPEOPLE`;
+
+-------------------------------------------------
+
+mysql> SELECT `Rating`,`Cname` FROM `CUSTOMERS` WHERE `City` = 'San Jose';
+
+-------------------------------------------------
+
+mysql> SELECT DISTINCT `Snum` FROM `ORDERS`;
+
+-------------------------------------------------
+
