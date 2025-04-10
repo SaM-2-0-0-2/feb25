@@ -1,0 +1,150 @@
+mysql> create table SEMP (
+    -> EMPNO CHAR(4),
+    -> EMPNAME CHAR(20),
+    -> BASIC FLOAT,
+    -> DEPTNO CHAR(2),
+    -> DEPTHEAD CHAR(4)
+    -> );
+
+---------------------------------------
+
+mysql> create table SDEPT(
+    -> DEPTNO CHAR(2),
+    -> DEPTNAME CHAR(15)
+    -> );
+
+--------------------------------------
+
+mysql> INSERT INTO `SDEPT` VALUES
+    -> (10,'Development'),
+    -> (20,'Training')
+    -> ;
+
+--------------------------------------
+
+mysql> INSERT INTO `SEMP` (EMPNO, EMPNAME, BASIC, DEPTNO)
+    -> VALUES (0001,'SUNIL',6000,10);
+
+mysql> INSERT INTO `SEMP` (EMPNO, EMPNAME, BASIC, DEPTNO)
+    -> VALUES (0002,'HIREN',8000,20);
+
+mysql> INSERT INTO `SEMP` VALUES
+    -> (0003,'ALI',4000, 10,0001);
+
+mysql> INSERT INTO `SEMP` (EMPNO, EMPNAME, BASIC, DEPTNO)
+    -> VALUES (0004,'GEORGE',6000,0002);
+
+---------------------------------------
+
+mysql> CREATE TABLE S (
+    -> `S#` VARCHAR(20),
+    -> Sname VARCHAR(20),
+    -> Status INT,
+    -> City VARCHAR(20)
+    -> );
+
+mysql> INSERT INTO S VALUES
+    -> ('S1', 'McMuffin', 10, 'London'),
+    -> ('S2', 'Clark', 20, 'London'),
+    -> ('S4', 'Johnson', 30, 'New York')
+    -> ('S3', 'Smithson', 20, 'New York')
+    -> ('S5', 'Sartoix', 10, 'Paris')
+    -> ('S6', 'Childe', 20, 'Paris')
+    -> ('S7', 'Stephanopoulis', 30, 'Athens')
+    -> ('S8', 'Kaldros', 30, 'Athens');
+
+mysql> CREATE TABLE P (
+    -> `P#` VARCHAR(20),
+    -> Pname VARCHAR(20),
+    -> Color VARCHAR(20),
+    -> WEIGHT FLOAT,
+    -> City VARCHAR(20)
+    -> );
+
+mysql> INSERT INTO P VALUES
+    -> ('P1', 'Rectangle', 'Red', 5.0, 'New York'),
+    -> ('P2', 'Polygon', 'Brown', 4.2, 'Paris'),
+    -> ('P3', 'Rodney', 'Green', 4.23, 'Athens'),
+    -> ('P4', 'Jerry', 'Grey', 2.23, 'London'),
+    -> ('P5', 'Triangle', 'Royal Blue', 25.61, 'London'),
+    -> ('P6', 'Tomri', 'White', 14.20, 'Paris');
+    -> ('P8', 'Squareto', 'Teal', 50.3, 'New York');
+
+mysql> CREATE TABLE J (
+    -> `J#` VARCHAR(20),
+    -> JName VARCHAR(20),
+    -> City VARCHAR(20)
+    -> );
+
+mysql> INSERT INTO J VALUES
+    -> (1, 'alpha' , 'Athens'),
+    -> (2, 'beta' , 'Athens'),
+    -> (3, 'Omega' , 'New York'),
+    -> (4, 'Theta', 'New York'),
+    -> (5, 'Gamma', 'Paris'),
+    -> (6, 'Phi', 'London')
+    -> ;
+
+mysql> CREATE TABLE SPJ (
+    -> `S#` VARCHAR(20),
+    -> `P#` VARCHAR(20),
+    -> `J#` VARCHAR(20),
+    -> Qty INT
+    -> );
+
+mysql> INSERT INTO SPJ VALUES
+    -> ('S1', 'P5' , 'J6', 45),
+    -> ('S2', 'P4' , 'J6', 45),
+    -> ('S3', 'P1' , 'J3', 15),
+    -> ('S4', 'P8' , 'J4', 165),
+    -> ('S5', 'P2' , 'J5', 652),
+    -> ('S6', 'P2' , 'J5', 27),
+    -> ('S7', 'P3' , 'J1', 227),
+    -> ('S8', 'P3' , 'J2', 2527)
+    -> ;
+
+
+----------------------------------------
+
+
+mysql> SELECT * FROM S;
+
+----------------------------------------
+
+mysql> SELECT `S#`, SNAME FROM S;
+
+----------------------------------------
+
+mysql> SELECT PNAME, COLOR FROM P WHERE CITY='LONDON';
+
+----------------------------------------
+
+mysql> SELECT `Sname` FROM S WHERE City='London';
+
+----------------------------------------
+
+mysql> SELECT `Sname` FROM S WHERE City='Athens' OR City='Paris';
+
+----------------------------------------
+
+mysql> SELECT * FROM J WHERE `City` = 'Athens';
+
+----------------------------------------
+
+mysql> SELECT `Pname` FROM P WHERE Weight>=12 AND Weight<=14;
+
+----------------------------------------
+
+mysql> SELECT * FROM S WHERE Status>=20;
+
+----------------------------------------
+
+mysql> SELECT * FROM S WHERE City <> 'London';
+
+----------------------------------------
+
+mysql> SELECT DISTINCT City FROM S;
+
+----------------------------------------
+
+mysql> SELECT `WEIGHT`*1000 AS `MILLIGRAM`, `WEIGHT`/1000 AS `KILOGRAM` FROM `P`;
