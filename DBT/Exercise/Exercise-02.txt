@@ -1,0 +1,28 @@
+mysql> SELECT * FROM `S` ORDER BY `City` DESC;
+
+-----------------------------------------------
+
+mysql> SELECT * FROM `P` ORDER BY `CITY`, Pname;
+
+-----------------------------------------------
+
+mysql> SELECT * FROM `S` WHERE `Status` BETWEEN 10 AND 20;
+
+-----------------------------------------------
+
+mysql> SELECT `Pname`, `Weight` FROM `P` WHERE `Weight` NOT BETWEEN 10 AND 15;
+
+-----------------------------------------------
+
+mysql> SELECT `Pname` FROM `P` WHERE `Pname` LIKE 'S%';
+
+-----------------------------------------------
+
+mysql> SELECT `Sname` FROM `S` WHERE `City` LIKE 'L%';
+
+-----------------------------------------------
+
+mysql> SELECT * FROM `J` WHERE `Jname` LIKE '__n%';
+
+-----------------------------------------------
+
