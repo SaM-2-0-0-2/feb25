@@ -1,0 +1,40 @@
+
+mysql> SELECT upper(Substring(Sname,1,1)) FROM S;
+
+-------------------------------------------------
+
+mysql> SELECT upper(Sname) FROM S;
+
+-------------------------------------------------
+
+mysql> SELECT lower(Sname) FROM S;
+
+-------------------------------------------------
+
+mysql> SELECT LPAD(Sname, 25, ' ') AS `LPAD DEMO` FROM S;
+
+-------------------------------------------------
+
+mysql> SELECT replace(Sname, 'la', 'ro') FROM S;
+
+-------------------------------------------------
+
+mysql> SELECT replace(replace(`sname`, 'l','r'),'a', 'o') AS RESULT FROM S;
+
+-------------------------------------------------
+
+mysql> SELECT SNAME, LENGTH(SNAME) AS `LENGTH` FROM S;
+
+-------------------------------------------------
+
+mysql> SELECT SNAME FROM S WHERE SOUNDEX(Sname) = SOUNDEX('BLOOK');
+
+------------------------------------------------
+
+mysql> SELECT SNAME, REPLACE(REPLACE(REPLACE( Status,10, 'Ten'), 20, 'Twenty'),30, 'Thirty') AS STATUS FROM S;
+
+------------------------------------------------
+
+mysql> SELECT DAYNAME(SYSDATE()) AS DAYNAME FROM DUAL;
+
+------------------------------------------------
