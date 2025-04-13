@@ -1,0 +1,30 @@
+
+mysql> SELECT COUNT(Odate) FROM ORDERS WHERE ODATE = '1990-10-03';
+
+-------------------------------------------------------------------
+
+mysql> SELECT COUNT(CITY) FROM CUSTOMERS
+    -> GROUP BY CITY;
+
+-------------------------------------------------------------------
+
+mysql> SELECT Cnum, MIN(AMT) FROM ORDERS
+    -> GROUP BY Cnum;
+
+-------------------------------------------------------------------
+
+mysql> SELECT * FROM CUSTOMERS WHERE CNAME LIKE 'G%'
+    -> ORDER BY CNAME
+    -> LIMIT 1;
+
+-------------------------------------------------------------------
+
+mysql> SELECT MAX(Rating) FROM CUSTOMERS
+    -> GROUP BY CITY;
+
+-------------------------------------------------------------------
+
+mysql> SELECT COUNT(DISTINCT Snum) FROM ORDERS
+    -> GROUP BY ODATE;
+
+-------------------------------------------------------------------
