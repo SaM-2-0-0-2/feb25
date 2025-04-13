@@ -1,0 +1,19 @@
+
+mysql> SELECT Onum, Snum, amt*0.12 AS "COMMISION" FROM ORDERS;
+
+--------------------------------------------------------------
+
+mysql> SELECT `City`, MAX(`Rating`) FROM CUSTOMERS
+    -> GROUP BY `City`;
+
+--------------------------------------------------------------
+
+mysql> SELECT `Rating`, `Cname`, `Cnum` FROM CUSTOMERS
+    -> ORDER BY `Rating` DESC;
+
+--------------------------------------------------------------
+
+mysql> SELECT COUNT(`ODATE`) FROM ORDERS
+    -> GROUP BY `ODATE`;
+
+--------------------------------------------------------------
