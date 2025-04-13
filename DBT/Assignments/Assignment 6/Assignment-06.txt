@@ -16,6 +16,6 @@ mysql> SELECT * FROM `CUSTOMERS` WHERE `CNAME` LIKE 'C%';
 
 --------------------------------------------------------------------------------
 
-mysql> SELECT * FROM `ORDERS` WHERE `AMT` !=0 OR `AMT` != NULL;
+mysql> SELECT * FROM `ORDERS` WHERE `AMT` !=0 OR `AMT` IS NOT NULL;
 
 --------------------------------------------------------------------------------
