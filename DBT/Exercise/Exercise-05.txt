@@ -1,0 +1,55 @@
+
+mysql> SELECT S.SNAME, SPJ.QTY FROM S, SPJ
+    -> WHERE S.`S#` =SPJ.`S#`;
+
+-------------------------------------------
+
+mysql> SELECT P.PNAME "PART NAME", SPJ.QTY "QUANTITY" FROM P, SPJ
+    -> WHERE P.`P#` = SPJ.`P#`;
+
+-------------------------------------------
+
+mysql> SELECT J.JNAME "PROJECT NAME", SPJ.QTY "QUANTITY" FROM J, SPJ
+    -> WHERE J.`J#` = SPJ.`J#`;
+
+-------------------------------------------
+
+mysql> SELECT S.SNAME "SUPPLIER NAME", P.PNAME "PART NAME", J.JNAME "PROJECT NAME", SPJ.QTY FROM S, P, J, SPJ
+    -> WHERE S.`S#` = SPJ.`S#` AND P.`P#` = SPJ.`P#` AND J.`J#` = SPJ.`J#`;
+
+-------------------------------------------
+
+mysql> SELECT S.SNAME "SUPPLIER NAME", P.PNAME "PART NAME", J.JNAME "PROJECT NAME", S.CITY FROM S, P, J, SPJ
+    -> WHERE S.`S#` = SPJ.`S#` AND P.`P#` = SPJ.`P#` AND J.`J#` = SPJ.`J#` AND S.`CITY` = P.`CITY`;
+
+-------------------------------------------
+
+mysql> SELECT P.PNAME "PART NAME", SPJ.QTY "QUANTITY" FROM P, SPJ
+    -> WHERE P.`P#` = SPJ.`P#` AND P.COLOR='RED';
+
+-------------------------------------------
+
+mysql> SELECT S.SNAME "SUPPLIERS" , SPJ.QTY FROM S, SPJ
+    -> WHERE S.`S#` = SPJ.`S#` AND S.STATUS = 20;
+
+-------------------------------------------
+
+mysql> SELECT P.PNAME "PARTS" , SPJ.QTY FROM P, SPJ
+    -> WHERE P.`P#` = SPJ.`P#` AND P.WEIGHT>14;
+
+-------------------------------------------
+
+mysql> SELECT J.JNAME "PROJECTS", J.CITY FROM J, SPJ
+    -> WHERE J.`J#`=SPJ.`J#` AND SPJ.QTY>500;
+
+-------------------------------------------
+
+mysql> SELECT P.PNAME "PART NAME", SPJ.QTY "QUANTITY" FROM P, SPJ
+    -> WHERE P.`P#` = SPJ.`P#` AND P.WEIGHT < 15;
+
+-------------------------------------------
+
+mysql> SELECT EMPLOYEE.ENAME, MANAGER.MNAME FROM EMPLOYEE, MANAGER
+    -> WHERE EMPLOYEE.MID = MANAGER.MID;
+
+-------------------------------------------
