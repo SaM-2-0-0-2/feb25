@@ -1,0 +1,61 @@
+
+mysql> SELECT MIN(`STATUS`) FROM S;
+
+------------------------------------
+
+mysql> SELECT MAX(`WEIGHT`) FROM `P`;
+
+------------------------------------
+
+mysql> SELECT AVG(`WEIGHT`) FROM `P`;
+
+------------------------------------
+
+mysql> SELECT `QTY` FROM `SPJ` WHERE `P#` = 'P1';
+
+------------------------------------
+
+mysql> SELECT SUM(`QTY`) FROM `SPJ` WHERE `P#` = 'P1';
+
+------------------------------------
+
+mysql> SELECT SUM(`QTY`) FROM `SPJ` GROUP BY `P#`;
+
+------------------------------------
+
+mysql> SELECT AVG(`QTY`) FROM `SPJ` GROUP BY `P#`;
+
+------------------------------------
+
+mysql> SELECT MAX(`QTY`) AS "MAXIMUM_QUANTITY" FROM `SPJ`
+    -> GROUP BY `P#`
+    -> HAVING MAX(`QTY`)>800;
+
+------------------------------------
+
+mysql> SELECT `STATUS`, COUNT('S#') AS "NUMBER OF SUPPLIERS" FROM `S`
+    -> GROUP BY `STATUS`;
+
+------------------------------------
+
+mysql> SELECT CITY, COUNT(`P#`) "NUMBER OF PROJECTS" FROM `P`
+    -> GROUP BY `CITY`;
+
+------------------------------------
+
+10. What is the difference between COUNT(Status) and COUNT(*) ?   
+ANS-> Later one counts the number of rows present in a table while Count(Status) counts the number of rows where status is not null to analyse meaningful data.
+
+------------------------------------
+
+mysql> SELECT
+    -> CASE `STATUS`
+    -> WHEN 10 THEN 'Ten'
+    -> WHEN 20 THEN 'Twenty'
+    -> WHEN 30 THEN 'Thirty'
+    -> END AS "Status",
+    -> COUNT(`STATUS`) AS "Count"
+    -> FROM S
+    -> GROUP BY `STATUS`;
+
+------------------------------------
