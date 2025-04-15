@@ -1,0 +1,12 @@
+
+mysql> SELECT DISTINCT A.SNAME "SNAME1", B.SNAME "SNAME2" FROM SALESPEOPLE A, SALESPEOPLE B
+    -> WHERE A.CITY = b.CITY AND A.SNAME  < B.SNAME;
+
+--------------------------------------------------------------------------------------------
+
+mysql> SELECT CNAME, CITY FROM CUSTOMERS
+    -> WHERE RATING = (SELECT RATING FROM CUSTOMERS WHERE CNAME = 'Hoffman');
+
+--------------------------------------------------------------------------------------------
+
+
