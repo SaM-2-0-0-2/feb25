@@ -24,8 +24,6 @@ mysql> SELECT * FROM ORDERS
     -> WHERE AMT > (SELECT MIN(AMT) FROM ORDERS
     -> WHERE CNUM IN (SELECT CNUM FROM CUSTOMERS WHERE CITY = 'London'));
 
---------------------------------------------------------------
-
 mysql> SELECT * FROM ORDERS
     -> WHERE AMT < (SELECT MAX(AMT) FROM ORDERS 
     -> 	WHERE CNUM IN (SELECT CNUM FROM CUSTOMERS WHERE CITY = 'London'));
