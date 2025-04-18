@@ -1,0 +1,35 @@
+mysql> SELECT * FROM CUSTOMERS WHERE RATING > 
+    -> ANY(SELECT RATING FROM CUSTOMERS WHERE 
+    -> SNUM = (SELECT SNUM FROM SALESPEOPLE WHERE SNAME = 'Serres'));
+
+--------------------------------------------------------------
+
+mysql> SELECT SNAME FROM SALESPEOPLE
+    -> WHERE CITY !=  ALL(SELECT CITY FROM CUSTOMERS);
+
+mysql> SELECT SNAME FROM SALESPEOPLE
+    -> WHERE NOT CITY = ANY(SELECT CITY FROM CUSTOMERS);
+
+--------------------------------------------------------------
+
+mysql> SELECT * FROM ORDERS
+    -> WHERE AMT > 
+    -> ANY(SELECT AMT FROM ORDERS WHERE CNUM IN 
+    -> (SELECT CNUM FROM CUSTOMERS WHERE CITY = 'London'));
+
+--------------------------------------------------------------
+
+mysql> SELECT * FROM ORDERS 
+    -> WHERE AMT > (SELECT MIN(AMT) FROM ORDERS
+    -> WHERE CNUM IN (SELECT CNUM FROM CUSTOMERS WHERE CITY = 'London'));
+
+--------------------------------------------------------------
+
+mysql> SELECT * FROM ORDERS
+    -> WHERE AMT < (SELECT MAX(AMT) FROM ORDERS 
+    -> 	WHERE CNUM IN (SELECT CNUM FROM CUSTOMERS WHERE CITY = 'London'));
+
+--------------------------------------------------------------
+
+
+

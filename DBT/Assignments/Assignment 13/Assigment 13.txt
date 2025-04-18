@@ -1,0 +1,28 @@
+
+mysql> SELECT CNAME, CITY, RATING, 'High Rating' AS RATING_TYPE FROM CUSTOMERS
+    -> WHERE RATING >= 200
+    ->                          UNION
+    -> SELECT CNAME, CITY, RATING, 'Low Rating' AS RATING_TYPE FROM CUSTOMERS
+    -> WHERE RATING < 200;
+
+-------------------------------------------------------------------------------
+
+mysql> SELECT SNUM "ID", SNAME "NAME" FROM SALESPEOPLE
+    -> UNION
+    -> SELECT CUSTOMERS.CNUM "ID", CNAME "NAME" FROM CUSTOMERS
+    -> JOIN ORDERS ON CUSTOMERS.CNUM = ORDERS.CNUM
+    -> GROUP BY CUSTOMERS.CNUM, CNAME
+    -> HAVING COUNT(ONUM)>1;
+
+-------------------------------------------------------------------------------
+
+mysql> SELECT SNUM FROM SALESPEOPLE
+    -> WHERE CITY = 'San Jose'
+    ->          EXCEPT
+    -> SELECT CNUM FROM CUSTOMERS
+    -> WHERE CITY = 'San Jose'
+    ->          UNION
+    -> SELECT ONUM FROM ORDERS
+    -> WHERE ODATE = '1990-10-03';
+
+------------------------------------------------------------------------------
