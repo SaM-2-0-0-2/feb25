@@ -1,0 +1,31 @@
+
+mysql> CREATE TABLE ORDERS(
+    -> ONUM INT PRIMARY KEY,
+    -> CNUM INT,
+    -> SNUM INT,
+    -> ODATE DATE NOT NULL,
+    -> CONSTRAINT c_u_unique UNIQUE (CNUM, SNUM)
+    -> );
+
+------------------------------------------------
+
+mysql> CREATE TABLE SALESPEOPLE(
+    -> SNUM INT PRIMARY KEY,
+    -> SNAME VARCHAR(68) NOT NULL,
+    -> COMM DECIMAL (3,2) DEFAULT 0.10,
+    -> CHECK (SNAME = UPPER(SNAME) AND LEFT(SNAME,1) BETWEEN 'A' AND 'B')
+    -> );
+
+
+------------------------------------------------
+
+mysql> CREATE TABLE ORDERS(
+    -> ONUM INT PRIMARY KEY,
+    -> SNUM INT NOT NULL,
+    -> CNUM INT NOT NULL,
+    -> ODATE DATE NOT NULL,
+    -> CHECK( ONUM > CNUM AND CNUM > SNUM )
+    -> );
+
+------------------------------------------------
+
