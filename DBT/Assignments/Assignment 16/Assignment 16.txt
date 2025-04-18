@@ -1,0 +1,21 @@
+
+mysql> CREATE INDEX order_index ON ORDERS(ODATE);
+
+-------------------------------------------------
+
+mysql> ALTER TABLE ORDERS
+    -> ADD CONSTRAINT unique_orders UNIQUE (`Onum`);
+
+-------------------------------------------------
+
+mysql> CREATE INDEX salespeople_order_index ON ORDERS(SNUM, ODATE);
+
+
+-------------------------------------------------
+
+mysql> ALTER TABLE CUSTOMERS
+    -> ADD CONSTRAINT salespeople_rating_customer UNIQUE (`Rating`, `Snum`);
+
+-------------------------------------------------
+
+
