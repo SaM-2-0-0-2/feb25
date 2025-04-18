@@ -1,0 +1,25 @@
+
+mysql> INSERT INTO MULTICUST
+    -> SELECT * FROM SALESPEOPLE
+    -> WHERE SNUM IN
+    -> (SELECT SNUM FROM CUSTOMERS
+    ->  GROUP BY SNUM
+    ->  HAVING COUNT(*) > 1);
+
+----------------------------------
+
+mysql> DELETE FROM `CUSTOMERS` 
+    -> WHERE `CNUM` NOT IN
+    -> (SELECT `CNUM` FROM `ORDERS`);
+
+----------------------------------
+
+mysql> UPDATE SALESPEOPLE
+    -> SET Comm = Comm+0.10
+    -> WHERE SNUM =
+    -> (SELECT SNUM FROM ORDERS
+    ->  GROUP BY SNUM
+    ->  HAVING SUM(AMT) > 3000);
+
+----------------------------------
+
