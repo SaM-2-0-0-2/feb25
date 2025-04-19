@@ -1,0 +1,9 @@
+
+#1  Create View Dailyorders  
+    as Select Distinct cnum, snum, onum, odate from Orders; 
+ANS -> NO
+
+#2  Create View Custotals  
+    as Select cname, Sum (amt) Sum_Amt from Orders, Customers   
+    where Orders.cnum=Customers.cnum  
+    Group by cname;
