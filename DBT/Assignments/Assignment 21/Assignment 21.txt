@@ -1,0 +1,37 @@
+
+mysql> GRANT UPDATE(RATING) ON classwork.CUSTOMERS TO Amit@localhost;
+
+----------------------------------------------------------------------
+
+mysql> GRANT SELECT ON classwork.ORDERS TO manoj@localhost WITH GRANT OPTION;
+
+----------------------------------------------------------------------
+
+mysql> REVOKE INSERT ON classwork.SALESPEOPLE FROM ajita@localhost;
+
+-------------------------------------------------------------------------
+
+mysql> CREATE VIEW customers_tempp
+    -> AS
+    -> SELECT * FROM CUSTOMERS
+    -> WHERE RATING BETWEEN 100 AND 500
+    -> WITH CHECK OPTION;
+
+mysql> GRANT INSERT, UPDATE ON classwork.customers_temp TO abhijeet@localhost;
+
+-------------------------------------------------------------------------
+
+mysql> CREATE VIEW customers_restricted
+    -> AS
+    -> SELECT * FROM CUSTOMERS
+    -> WHERE RATING = (SELECT MIN(RATING) FROM CUSTOMERS);
+
+mysql> GRANT SELECT ON classwork.customers_restricted TO vikram@localhost;
+
+-------------------------------------------------------------------------
+
+
+
+
+
+
