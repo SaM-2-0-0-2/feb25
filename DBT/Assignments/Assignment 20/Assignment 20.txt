@@ -7,3 +7,5 @@ ANS -> NO
     as Select cname, Sum (amt) Sum_Amt from Orders, Customers   
     where Orders.cnum=Customers.cnum  
     Group by cname;
+
+#
