@@ -1,1 +1,17 @@
+1. SELECT ..... display the ENAMEs with the initial letter capital
 mysql> SELECT CONCAT(UPPER(SUBSTRING(ENAME,1,1)), LOWER(SUBSTRING(ENAME,2))) AS "EMPLOYEE NAME" FROM EMP;
+
+---------------------------------------------------------------------------------------------------------
+
+2. SELECT ..... display the ENAMEs centre-justified. Assume screen width is 60 characters.
+mysql> SELECT RPAD(LPAD(ENAME,(60 + LENGTH(ENAME))/2, " "), 60, " ") AS "EMPLOYEE NAME" FROM EMP;
+
+---------------------------------------------------------------------------------------------------------
+
+3. SELECT ..... display the starting position of the second occurrence of the string ‘un’ in the ENAME column. 
+mysql> SELECT ENAME, LOCATE('UN', ENAME, LOCATE('UN', ENAME)) "Second" FROM EMP;
+
+---------------------------------------------------------------------------------------------------------
+
+4. SELECT ..... spell out the SAL column up to 5 million (ignore paise) 
+
