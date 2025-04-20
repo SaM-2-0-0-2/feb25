@@ -7,7 +7,7 @@ mysql> SELECT `Sname`, `City` FROM `SALESPEOPLE` WHERE `CITY` = 'London' AND  `C
 
 -----------------------------------------------
 
-mysql> SELECT * FROM `CUSTOMERS` WHERE `Rating`<=100 AND `City`='Rome';
+mysql> SELECT * FROM `CUSTOMERS` WHERE `Rating`>100 OR `City`='Rome';
 
 -----------------------------------------------
 
