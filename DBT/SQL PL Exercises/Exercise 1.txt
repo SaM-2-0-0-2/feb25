@@ -1,0 +1,130 @@
+
+mysql> DELIMITER //
+mysql> CREATE PROCEDURE RECTANGLE()
+    -> BEGIN
+    ->  DECLARE L INT DEFAULT 20;
+    ->  DECLARE W INT DEFAULT 80;
+    ->  SELECT L "LENGTH", W "WIDTH", (2*(L+W)) "PERIMETER OF RECTANGLE", (L*W) "RECTANGLE AREA" FROM DUAL;
+    -> END; //
+mysql> DELIMITER ;
+mysql> call rectangle;
++--------+-------+------------------------+----------------+
+| LENGTH | WIDTH | PERIMETER OF RECTANGLE | RECTANGLE AREA |
++--------+-------+------------------------+----------------+
+|     20 |    80 |                    200 |           1600 |
++--------+-------+------------------------+----------------+
+
+-------------------------------------------------------------------------------------------------------------
+
+mysql> DELIMITER //
+mysql> CREATE PROCEDURE SQ_CU()
+    -> BEGIN
+    ->  DECLARE NUM INT;
+    ->  SET NUM  = 10;
+    ->  INSERT INTO TEMPP VALUES(NUM, (NUM*NUM), (NUM*NUM*NUM));
+    -> END; //
+mysql> DELIMITER ;
+mysql> CALL SQ_CU();
+mysql> SELECT * FROM TEMPP;
++------+--------+-------+
+| VAL  | SQUARE | CUBE_ |
++------+--------+-------+
+|   10 |    100 |  1000 |
++------+--------+-------+
+
+-------------------------------------------------------------------------------------------------------------
+
+mysql> DELIMITER //
+mysql> CREATE PROCEDURE temperature()
+    -> BEGIN
+    ->  DECLARE C FLOAT(4,2);
+    ->  DECLARE F FLOAT(4,2);
+    ->  SET C = 32.00;
+    ->  SET F = 97.50;
+    ->  SELECT F, TRUNCATE((F-32)*5/9,2) "Celsius", C, TRUNCATE((9/5)*C+32,2) "Fahrenheit";
+    -> END; //
+mysql> DELIMITER ;
+mysql> CALL temperature;
++-------+---------+-------+------------+
+| F     | Celsius | C     | Fahrenheit |
++-------+---------+-------+------------+
+| 97.50 |   36.38 | 32.00 |       89.6 |
++-------+---------+-------+------------+
+
+-------------------------------------------------------------------------------------------------------------
+
+mysql> DELIMITER //
+mysql> CREATE PROCEDURE ify()
+    -> BEGIN
+    ->  DECLARE NUM INT;
+    ->  DECLARE YARDS INT;
+    ->  DECLARE FEET INT;
+    ->  DECLARE INCHES INT;
+    ->  DECLARE REM_INCHES INT;
+    ->  SET NUM = 124;
+    ->  SET YARDS = NUM / 36;
+    ->  SET REM_INCHES = NUM % 36;
+    ->  SET FEET = REM_INCHES / 12;
+    ->  SET INCHES = REM_INCHES % 12;
+    ->  SELECT NUM "INCHES", CONCAT(YARDS, " yards, ", FEET, " ft, ", INCHES, " inches.") "RESULT";
+    -> END; //
+mysql> DELIMITER ;
+mysql> call ify();
++---------+---------------------------+
+| INCHES  | RESULT                    |
++---------+---------------------------+
+|     124 |  3 yards, 1 ft, 4 inches. |
++---------+---------------------------+
+
+-------------------------------------------------------------------------------------------------------------
+
+mysql> DELIMITER //
+mysql> CREATE PROCEDURE chkDiv5(n INT)
+    -> BEGIN
+    ->  IF n%5=0 THEN
+    ->          SELECT n "NUMBER", CONCAT(n, ' is divisible by 5') "RESULT";
+    ->  ELSE
+    ->          SELECT n "NUMBER", CONCAT(n, ' is not divisible by 5') "RESULT";     
+    ->  END IF;
+    ->  END; //
+mysql> DELIMITER ;
+mysql> call chkDiv5(5);
++--------+---------------------+
+| NUMBER | RESULT              |
++--------+---------------------+
+|      5 | 5 is divisible by 5 |
++--------+---------------------+
+mysql> call chkDiv5(52);
++--------+--------------------------+
+| NUMBER | RESULT                   |
++--------+--------------------------+
+|     52 | 52 is not divisible by 5 |
++--------+--------------------------+
+
+-------------------------------------------------------------------------------------------------------------
+
+mysql> DELIMITER //
+mysql> CREATE PROCEDURE chk100(a DECIMAL(5,2), b DECIMAL(5,2))
+    -> BEGIN
+    ->  DECLARE PROD DECIMAL(5,2);
+    ->  SET PROD = a * b;
+    ->  IF PROD >= 100 THEN
+    ->          SELECT CONCAT('Product of ', a, ' and ', b, ' is greater than or equal to 100') "RESULT";
+    ->  ELSE
+    ->          SELECT CONCAT('Product of ', a, ' and ', b, ' is not greater than or equal to 100') "RESULT";
+    ->  END IF;
+    -> END; //
+mysql> call chk100(10,10.0);
++--------------------------------------------------------------------------+
+| RESULT								   |
++--------------------------------------------------------------------------+
+| Product of 10.00 and 10.00 is greater than or equal to 100               |
++--------------------------------------------------------------------------+
+mysql> call chk100(10,9.9);
++--------------------------------------------------------------------------+
+| RESULT								   |
++--------------------------------------------------------------------------+
+| Product of 10.00 and 9.90 is not greater than or equal to 100            |
++--------------------------------------------------------------------------+
+
+-------------------------------------------------------------------------------------------------------------
