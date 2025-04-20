@@ -1,0 +1,49 @@
+mysql> CREATE FUNCTION validTriangle(a INT, b INT, c INT)
+    -> RETURNS BOOLEAN
+    -> DETERMINISTIC
+    -> BEGIN
+    ->     DECLARE isValid BOOLEAN;
+    ->     IF (a + b > c) AND (a + c > b) AND (b + c > a) THEN
+    ->         SET isValid = TRUE;
+    ->     ELSE
+    ->         SET isValid = FALSE;
+    ->     END IF;
+    ->
+    ->     RETURN isValid;
+    -> END //
+mysql> DELIMITER ;
+mysql> SELECT validTriangle(2,3,4);
+
+-----------------------------------------------------------------
+
+mysql> DELIMITER //
+mysql> CREATE FUNCTION random_Number() RETURNS INT
+    -> DETERMINISTIC
+    -> BEGIN
+    ->  RETURN FLOOR(1 + RAND() * 10);
+    -> END; //
+mysql> DELIMITER ;
+mysql> CALL random_Number();
+
+-----------------------------------------------------------------
+
+mysql> DELIMITER //
+mysql> CREATE FUNCTION rev_String(STR VARCHAR(255)) RETURNS VARCHAR(255)
+    -> DETERMINISTIC
+    -> BEGIN
+    ->  DECLARE REVERSED VARCHAR(255) DEFAULT '';
+    ->  DECLARE I INT;
+    ->
+    ->  SET I = CHAR_LENGTH(STR);
+    ->
+    ->  WHILE(I>0) DO
+    ->          SET REVERSED = CONCAT(REVERSED, SUBSTRING(STR, I, 1));
+    ->          SET I = I - 1;
+    ->  END WHILE;
+    ->
+    ->  RETURN REVERSED;
+    -> END; //
+mysql> DELIMITER ;
+mysql> SELECT rev_String('HELLO') FROM DUAL;
+
+-----------------------------------------------------------------
