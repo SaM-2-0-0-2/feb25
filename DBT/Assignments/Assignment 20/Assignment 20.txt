@@ -29,3 +29,16 @@ mysql> CREATE VIEW salescomm
 
 -------------------------------------------------------------
 
+mysql> CREATE TABLE Orders (
+    -> onum  INT PRIMARY KEY,
+    -> amt   DECIMAL(10,2),
+    -> odate DATETIME DEFAULT CURRENT_TIMESTAMP,
+    -> cnum  INT,
+    -> snum  INT
+    -> );
+
+mysql> CREATE VIEW entryorders 
+    -> AS
+    -> SELECT ONUM, AMT, SNUM, CNUM FROM ORDERS;
+
+-------------------------------------------------------------
