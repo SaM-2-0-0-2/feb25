@@ -1,0 +1,35 @@
+
+mysql> DELIMITER //
+mysql> CREATE PROCEDURE Comp_intr(p DECIMAL(10,2), r DECIMAL(5,4), y INT)
+    -> BEGIN
+    ->     DECLARE I DECIMAL(10,2);
+    ->     DECLARE total_amount DECIMAL(10,2);
+    ->
+    ->     SET I = p * (POW((1 + r), y)) - p;
+    ->
+    ->     SET total_amount = p + I;
+    ->       INSERT INTO tempp2 (interest, total_amount)
+    ->     VALUES (I, total_amount);
+    -> END; //
+mysql> DELIMITER ;
+mysql> CALL Comp_intr(1000.00, 0.05, 3); 
+
+---------------------------------------------------------------------------
+
+mysql> DELIMITER //
+mysql> CREATE FUNCTION Age_calc(dob DATE) RETURNS INT
+    -> DETERMINISTIC
+    -> BEGIN
+    ->     DECLARE age INT;
+    -> 	   SET age = TIMESTAMPDIFF(YEAR, dob, CURDATE());
+    ->     RETURN age;
+    -> END; //
+mysql> DELIMITER ;
+mysql> SELECT Age_calc('2002-04-21');
++------------------------+
+| Age_calc('2002-04-21') |
++------------------------+
+|                     23 |
++------------------------+
+
+---------------------------------------------------------------------------
