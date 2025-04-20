@@ -14,6 +14,7 @@ mysql> SELECT ENAME, LOCATE('UN', ENAME, LOCATE('UN', ENAME)) "Second" FROM EMP;
 ---------------------------------------------------------------------------------------------------------
 
 4. SELECT ..... spell out the SAL column up to 5 million (ignore paise) 
+
 DELIMITER //
 CREATE FUNCTION numToWord (n INT) RETURNS VARCHAR(255)
 DETERMINISTIC
@@ -52,3 +53,13 @@ DELIMITER ;
 
 ---------------------------------------------------------------------------------------------------------
 
+5. SELECT ..... display the ENAMEs with the vowels removed 
+mysql> SELECT REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(ENAME, 'a', ''), 'e', ''), 'i', ''), 'o', ''), 'u', '') AS "NAME WITHOUT VOWELS" FROM EMP;
+
+---------------------------------------------------------------------------------------------------------
+
+6. SELECT .......... sysdate() - hiredate 
+Display the experience of the employees in years, remainder months, days, hours, minutes, and seconds 
+
+
+---------------------------------------------------------------------------------------------------------
