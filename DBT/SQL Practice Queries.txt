@@ -59,7 +59,6 @@ mysql> SELECT REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(ENAME, 'a', ''), 'e', ''),
 ---------------------------------------------------------------------------------------------------------
 
 6. SELECT .......... sysdate() - hiredate 
-Display the experience of the employees in years, remainder months, days, hours, minutes, and seconds 
-
+Display the experience of the employees in years, remainder months, days, hours, minutes, and seconds.
 
 ---------------------------------------------------------------------------------------------------------
