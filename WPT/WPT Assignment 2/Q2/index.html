@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS Q2</title>
+</head>
+<style>
+    .container{
+        border: 1px solid gray;
+        width: 35%;
+        font-size: 20px;
+        background-color: #96d9e3;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 4.5%;
+        padding: 10px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .container form div{
+        padding: 10px;
+    }
+
+    #fname{
+        margin-left: 25px;
+        padding: 5px;
+        font-size: 20px;
+    }
+
+    #lname{
+        margin-left: 32px;
+        padding: 5px;
+        font-size: 20px;
+    }
+
+    #phone{
+        margin-left: 52px;
+        padding: 5px;
+        font-size: 20px;
+    }
+
+    #email{
+        margin-left: 57px;
+        padding: 5px;
+        font-size: 20px;
+    }
+
+    button{
+        padding: 15px;
+        border-radius: 20px;
+        font-size: 20px;
+        border: 1px solid rgba(128, 128, 128, 0.619);
+    }
+
+    button:hover{
+        cursor: pointer;
+        transition-duration: 0.25s;
+        background-color: #5cc5d5;
+    }
+
+    #btn{
+        margin-left: auto;
+        margin-right: auto;
+        width: 100px;
+    }
+
+    .display-container{
+        padding-top: 10px;
+        font-size: 20px;
+    }
+
+    
+    .display-container div{
+            margin-top: 10px;
+            margin-bottom: 10px;  
+    }
+
+
+</style>
+<body>
+    <div class="container">
+        <form action="">
+            <div>
+                FIRST NAME: <input id="fname" type="text" required>
+            </div>
+            <div>
+                LAST NAME: <input id="lname" type="text" required>
+            </div>
+            <div>
+                CONTACT: <input id="phone" type="text" required>
+            </div>
+            <div>
+                EMAIL-ID: <input id="email" type="text" required>
+            </div>
+            <div id="btn">
+                <button onclick="SubmitForm(event)">Submit</button>
+            </div>
+        </form>
+    </div>
+    <div class="container" hidden>
+        <div class="display-container">
+            <div>FIRST NAME: <span id="FNAME"></span></div>
+            <div>LAST NAME: <span id="LNAME"></span></div>
+            <div>CONTACT: <span id="PH-CONTACT"></span></div>
+            <div>EMAIL: <span id="EMAIL"></span></div>
+        </div>
+    </div>
+</body>
+<script>
+    function SubmitForm(event){
+        event.preventDefault();
+
+        var form = document.querySelector("form");
+        if(!form.checkValidity()){
+            form.reportValidity();
+            return;
+        }
+
+        var w = document.getElementById("fname").value;
+        var x = document.getElementById("lname").value;
+        var y = document.getElementById("phone").value;
+        var z = document.getElementById("email").value;
+        document.getElementById("FNAME").innerHTML = w;
+        document.getElementById("LNAME").innerHTML = x;
+        document.getElementById("PH-CONTACT").innerHTML = y;
+        document.getElementById("EMAIL").innerHTML = z;
+        document.querySelectorAll(".container")[1].removeAttribute("hidden");
+    }
+</script>
+</html>
