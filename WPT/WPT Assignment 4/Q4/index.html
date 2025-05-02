@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q4</title>
+</head>
+<body>
+</body>
+<script>
+    function fetchData(URL, callback){
+        let request = Math.random() < 0.5;
+        console.log("Fetching data from " + URL);
+        setTimeout(()=>{
+            if(request){
+                callback("Response recieved from: " + URL);
+            }else{
+                callback("Error: Response timeout");
+            }
+        }, 800);
+    }
+
+    fetchData("www.decoy.com", (response)=>{
+        console.log(response);
+    });
+
+    //Using Promise
+    // function fetchData(URL){
+    //     return new Promise((resolve,reject)=>{
+    //         console.log("Retriving data from: " + URL);    
+    //         setTimeout(()=>{
+    //             let response = "Response recieved from: " + URL;
+    //             if(response){
+    //                 resolve(response);
+    //             } else {
+    //                 reject("Error: Response not recieved");
+    //             }
+    //         }, 800)
+    //     });
+    // }
+
+    // fetchData("www.decoy.com").then((result)=>{
+    //     console.log(result)
+    // }).catch((error)=>{
+    //     console.log(error);
+    // });
+
+
+</script>
+</html>
