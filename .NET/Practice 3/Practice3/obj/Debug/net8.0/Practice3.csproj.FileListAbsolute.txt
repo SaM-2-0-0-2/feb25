@@ -1,0 +1,14 @@
+C:\Users\SHRIRAM SABADE\source\repos\Practice3\Practice3\bin\Debug\net8.0\Practice3.exe
+C:\Users\SHRIRAM SABADE\source\repos\Practice3\Practice3\bin\Debug\net8.0\Practice3.deps.json
+C:\Users\SHRIRAM SABADE\source\repos\Practice3\Practice3\bin\Debug\net8.0\Practice3.runtimeconfig.json
+C:\Users\SHRIRAM SABADE\source\repos\Practice3\Practice3\bin\Debug\net8.0\Practice3.dll
+C:\Users\SHRIRAM SABADE\source\repos\Practice3\Practice3\bin\Debug\net8.0\Practice3.pdb
+C:\Users\SHRIRAM SABADE\source\repos\Practice3\Practice3\obj\Debug\net8.0\Practice3.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\SHRIRAM SABADE\source\repos\Practice3\Practice3\obj\Debug\net8.0\Practice3.AssemblyInfoInputs.cache
+C:\Users\SHRIRAM SABADE\source\repos\Practice3\Practice3\obj\Debug\net8.0\Practice3.AssemblyInfo.cs
+C:\Users\SHRIRAM SABADE\source\repos\Practice3\Practice3\obj\Debug\net8.0\Practice3.csproj.CoreCompileInputs.cache
+C:\Users\SHRIRAM SABADE\source\repos\Practice3\Practice3\obj\Debug\net8.0\Practice3.dll
+C:\Users\SHRIRAM SABADE\source\repos\Practice3\Practice3\obj\Debug\net8.0\refint\Practice3.dll
+C:\Users\SHRIRAM SABADE\source\repos\Practice3\Practice3\obj\Debug\net8.0\Practice3.pdb
+C:\Users\SHRIRAM SABADE\source\repos\Practice3\Practice3\obj\Debug\net8.0\Practice3.genruntimeconfig.cache
+C:\Users\SHRIRAM SABADE\source\repos\Practice3\Practice3\obj\Debug\net8.0\ref\Practice3.dll
