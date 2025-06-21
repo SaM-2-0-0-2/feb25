@@ -1,0 +1,14 @@
+C:\Users\SHRIRAM SABADE\source\repos\Practice 7\Practice 7\bin\Debug\net8.0\Practice 7.exe
+C:\Users\SHRIRAM SABADE\source\repos\Practice 7\Practice 7\bin\Debug\net8.0\Practice 7.deps.json
+C:\Users\SHRIRAM SABADE\source\repos\Practice 7\Practice 7\bin\Debug\net8.0\Practice 7.runtimeconfig.json
+C:\Users\SHRIRAM SABADE\source\repos\Practice 7\Practice 7\bin\Debug\net8.0\Practice 7.dll
+C:\Users\SHRIRAM SABADE\source\repos\Practice 7\Practice 7\bin\Debug\net8.0\Practice 7.pdb
+C:\Users\SHRIRAM SABADE\source\repos\Practice 7\Practice 7\obj\Debug\net8.0\Practice 7.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\SHRIRAM SABADE\source\repos\Practice 7\Practice 7\obj\Debug\net8.0\Practice 7.AssemblyInfoInputs.cache
+C:\Users\SHRIRAM SABADE\source\repos\Practice 7\Practice 7\obj\Debug\net8.0\Practice 7.AssemblyInfo.cs
+C:\Users\SHRIRAM SABADE\source\repos\Practice 7\Practice 7\obj\Debug\net8.0\Practice 7.csproj.CoreCompileInputs.cache
+C:\Users\SHRIRAM SABADE\source\repos\Practice 7\Practice 7\obj\Debug\net8.0\Practice 7.dll
+C:\Users\SHRIRAM SABADE\source\repos\Practice 7\Practice 7\obj\Debug\net8.0\refint\Practice 7.dll
+C:\Users\SHRIRAM SABADE\source\repos\Practice 7\Practice 7\obj\Debug\net8.0\Practice 7.pdb
+C:\Users\SHRIRAM SABADE\source\repos\Practice 7\Practice 7\obj\Debug\net8.0\Practice 7.genruntimeconfig.cache
+C:\Users\SHRIRAM SABADE\source\repos\Practice 7\Practice 7\obj\Debug\net8.0\ref\Practice 7.dll
