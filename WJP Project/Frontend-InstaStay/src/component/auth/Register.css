@@ -1,0 +1,52 @@
+.form-group {
+  margin-bottom: 15px; /* Adjust as needed */
+}
+
+.label-container {
+  display: flex;
+  align-items: center; /* Vertically align the SVG and label */
+}
+
+.label-container label {
+  margin-left: 5px; /* Add some space between the SVG and the label */
+}
+
+.label-container svg{
+    margin-bottom: 5px;
+    margin-left: 2px;
+}
+
+.password-input-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.password-input-container input {
+    flex: 1;
+}
+
+.toggle-icon svg {
+    cursor: pointer;
+}
+
+.input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.input-wrapper input {
+    width: 95%;
+    padding-right: 20px; /* space for the icon */
+    box-sizing: border-box;
+}
+
+.toggle-visibility {
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #333;
+}
+
